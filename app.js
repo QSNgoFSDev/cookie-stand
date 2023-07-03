@@ -65,19 +65,68 @@
 let Seatle = {
 
     location: 'Seatle',
-    minHourlyCos: 10,
-    maxHourlyCos: 200,
-    avgCookies: 3,
-    data:
+    minHourlyCos: 23,
+    maxHourlyCos: 65,
+    avgCookies: 6.3,
+    dataPerHours: [],
     /*
 Use a method of that object to generate a random number of customers per hour. Objects/Math/random
 
 
 */
 
-    random: function (minHourlyCos, maxHourlyCos) {
-        return math.random() * (maxHourlyCos - minHourlyCos) + minHourlyCos;
+// method random to generate random sales
+
+    random: function () {
+        return Math.floor(math.random() * (this.maxHourlyCos - this.minHourlyCos) + this.minHourlyCos);
+    },
+
+    // calculate cookies/ hours 
+    // writing a loop from 6 to 19 . 
+    // 
+
+    cookiesPerHours: function () {
+        for (Let i= 6; i<= 19; i++) 
+        {
+            let cookies = (this.cookiesPerHours() * this.avgCookies);
+            this.dataPerHours.push(cookies)
+        }
+
+    },
+
+    // render to display under unordered list
+
+    display: function () {
+        // create header
+        let locationHtml = document.createElement('h2');
+        // put name of object to locationHtml
+        locationHtml.textContent = this.location;
+        // append function result to body of given HTML
+        document.body.appendChild(locationHtml);
+
+        // create undordered list
+        let listHour = document.createElement('ul');
+        // using loop to generate hours sell
+        for (Let i = 6; i <= 19; i++)
+        {
+            let listHoursHtml = document.createElement('li');
+            listHoursHtml.textContent = this.cookiesPerHours;
+            
+            listHour.appendChild(this.listHoursHtml)
+        } 
+
+        
+
+    
+
+    
+        
+
+        
     }
+
+
+
 
 
 
