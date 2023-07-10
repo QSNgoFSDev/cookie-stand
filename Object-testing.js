@@ -140,11 +140,11 @@ function Location(location, minCus, maxCus, avgSale) {
             let hourslyDataTable = document.createElement('td');
             // console.log(this.saleData)
             // console.log(hourslyDataTable)
-            console.log(this.saleData[i])
+            // console.log(this.saleData[i])
             // console.log(i)
             // console.log(this.saleData.length)
             hourslyDataTable.innerHTML = this.saleData[i];
-            console.log(hourslyDataTable)
+            // console.log(hourslyDataTable)
 
 
             locationTableName.appendChild(hourslyDataTable)
@@ -257,38 +257,80 @@ trelement.appendChild(tdelement)
 
 
 */
-cities = [seatlle,Paris]
+citiesArray = [seatlle, tokyo, dubai, Paris, Lima]
 
-function GeneralTable(cityNames1, cityNames2, cityNames3, cityNames4, cityNames5) {
-    this.cityNames1 = cityNames1,
-        this.cityNames2 = cityNames2,
-        this.cityNames3 = cityNames3,
-        this.cityNames4 = cityNames4,
-        this.cityNames5 = cityNames5,
 
-    this.createTable = function(){
-        let blanktr = document.createElement('tr')
-        blanktr.innerHTML = '&nbsp;'
-        document.body.appendChild(blanktr)
-        
-        
-        for (let i =6; i<=19;i++){
-            let hours = i;
-            let amHours = 'AM';
-            if (i>12){
-                hours -=12;
-                amHours = 'PM';
+let tableGeneral = document.createElement('table')
+tableGeneral.innerHTML = 'General Sales'
+document.body.appendChild(tableGeneral)
+let blanktr = document.createElement('tr')
+blanktr.innerHTML = '&nbsp;'
+tableGeneral.appendChild(blanktr)
+
+
+
+
+for (let i = 6; i <= 19; i++) {
+    let hours = i;
+    let amHours = 'AM';
+    if (i > 12) {
+        hours -= 12;
+        amHours = 'PM';
+    }
+    let headingHours = document.createElement('td');
+    headingHours.innerHTML = hours + ' ' + amHours;
+    blanktr.appendChild(headingHours)
+}
+let dailyTotalTable = document.createElement('td')
+dailyTotalTable.innerHTML = 'Daily Total Sales'
+blanktr.appendChild(dailyTotalTable)
+
+
+
+
+function GeneralTables(cities) {
+    // loop through cities array.
+    // access to array salesData to extract location as tr, and sales data at j as td
+
+    this.createTableLocationData = function () {
+
+
+        for (let i = 0; i < cities.length; i++) {
+            let dataAccessed = document.createElement('tr');
+            dataAccessed.innerHTML = cities[i].location;
+            tableGeneral.appendChild(dataAccessed);
+            for (j = 0; j < cities[i].saleData.length; j++) {
+                let saleDataAccsessed = document.createElement('td')
+                saleDataAccsessed.innerHTML = cities[i].saleData[j];
+                dataAccessed.appendChild(saleDataAccsessed)
+
+                // let totalSale = document.createElement(td)
+
+
+
             }
-            let headingHours = document.createElement('td');
-            headingHours.innerHTML= hours + ' ' + amHours;
-            blanktr.appendChild(headingHours)
-            
 
-    
+            let totalSale = document.createElement('td')
+            totalSale.innerHTML = cities[i].sumCookies();
+            dataAccessed.appendChild(totalSale);
+
+
+
 
 
         }
 
-    }
+        // this.callTableFunction = function () {
+        //     this.createTableLocationData();
 
+        // }
+    }
 }
+
+
+
+
+
+
+let table = new GeneralTables(citiesArray);
+table.createTableLocationData();
