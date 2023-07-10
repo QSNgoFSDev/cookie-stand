@@ -1,129 +1,110 @@
-// let locationInput = function(location,saleData){
-//     this.location = location;
-//     this.saleData=saleData
-// }
-// contructor function to create location input inluding location and Sale
+Seatle = {
 
-
-
-// create object Seatle using locationInput constructor
-// let Seatle = new.locationInput('Seatle',saleSeatleData)
-
-// has it specific location = seatle, and Sale of seatle. => the need of create consutrctor function for saleData
-
-
-// constructor function for saleData has time & cookies
-// let saleData = function (time, cookies) {
-//     this.time = time
-//     this.cookies = cookies
-// }
-
-// time = array 
-// cookies = math.random loop thorough time[i].
-
-
-// // 
-// saleSeatleData= new.saleData(time,cookies)
-
-
-// let randomDataHours = function (cookiesSale, time)
-
-// let time =[6,7,8,9,10,11,12,13,14,15,16,18,19]
-
-// let randomsale = []
-
-// let randomMath = function (time, randomsale){
-
-//     function (min,max)={
-
-//     } 
-
-
-// let Seatle = {
-//     location: 'Sealte',
-//     time : [6,7,8,9,10,11,12,13,14,15,16,17,18,19],
-//     sale : [16,20,36,48,56,77,93,144,119,84,61,23,42,57],
-
-//     // function in Objecliteral syntax like this:
-//     sumSeatle : function(sale){
-
-//         let sum =0;
-//         for( let i = 0; i<sale.length;i++) {
-//            sum+= sale[i] ;
-//         }
-//     },
-
-// mistake made by not reading the requirement carefully.
-
-
-/* 
-1.0 Store the min/max hourly customers, and the average cookies per customer, in object properties.
-*/
-
-// solution: create simple object "Seatle" first
-
-let Seatle = {
-
+    // Store the min/max hourly customers, and the average cookies per customer, in object properties.
     location: 'Seatle',
-    minHourlyCos: 23,
-    maxHourlyCos: 65,
-    avgCookies: 6.3,
-    dataPerHours: [],
-    /*
-Use a method of that object to generate a random number of customers per hour. Objects/Math/random
+    MinCus : 23,
+    MaxCus : 65,
+    avgSale : 6.3,
+    dataPerHSale: [],
 
+    // Use a method of that object to generate a random number of customers per hour. Objects/Math/random
 
-*/
-
-// method random to generate random sales
-
-    random: function () {
-        return Math.floor(math.random() * (this.maxHourlyCos - this.minHourlyCos) + this.minHourlyCos);
+    randomCus : function () {
+        return Math.floor(Math.random()*(this.MaxCus-this.MinCus)+this.MinCus);
     },
 
-    // calculate cookies/ hours 
-    // writing a loop from 6 to 19 . 
-    // 
+    // Calculate and store the simulated amounts of cookies purchased for each hour at each location using average cookies purchased and the random number of customers generated.
 
-    cookiesPerHours: function () {
-        for (Let i= 6; i<= 19; i++) 
+    simulatedCookie : function()
+    {
+        // from 6 am to 19 pm
+        for (let i = 6; i<=19; i++) 
         {
-            let cookies = (this.cookiesPerHours() * this.avgCookies);
-            this.dataPerHours.push(cookies)
-        }
+            cookiesHoursly = this.randomCus() * this.avgSale
 
-    },
-
-    // render to display under unordered list
-
-    display: function () {
-        // create header
-        let locationHtml = document.createElement('h2');
-        // put name of object to locationHtml
-        locationHtml.textContent = this.location;
-        // append function result to body of given HTML
-        document.body.appendChild(locationHtml);
-
-        // create undordered list
-        let listHour = document.createElement('ul');
-        // using loop to generate hours sell
-        for (Let i = 6; i <= 19; i++)
-        {
-            let listHoursHtml = document.createElement('li');
-            listHoursHtml.textContent = this.cookiesPerHours;
-            
-            listHour.appendChild(this.listHoursHtml)
+            cookiesHoursly=Math.ceil(cookiesHoursly)
+            this.dataPerHSale.push(cookiesHoursly)
         } 
 
-        
+    },
 
+    // Store the results for each location in a separate array… perhaps as a property of the object representing that location.
+
+    // Display the values of each array as unordered lists in the browser.
+
+    totalSaleHours: function () {
+        let total = 0;
+        
+    
+        for (let j = 0; j < this.dataPerHSale.length; j++) {
+            
+            
+            
+            // console.log(total)
+            
+            total += this.dataPerHSale[j];
+            
+
+        };
+
+        return total;
+    },
     
 
+
+
+
+    displayToHtml : function() {
+        let locationBy =document.createElement('h2');
+        document.body.appendChild(locationBy);
+        locationBy.textContent = this.location;
+
     
+        let hourList = document.createElement('ul');
+        document.body.appendChild(hourList);
         
 
+        for (let i = 6; i<=19;i++) {
+            let detailsHours = document.createElement('li');
+            // detailsHours.textContent = i+' ' + this.dataPerHSale[i-6];
+            let hours = i
+            let amForhours = 'am';
+
+            // convert am to pm
+            
+            if (i > 12) {
+                hours  -=12;
+                amForhours  = 'pm';
+            }
+            detailsHours.textContent = hours + ': ' + amForhours + ': ' + this.dataPerHSale[i-6];
+            hourList.appendChild(detailsHours);
+
+
+
         
-    }
+
+
+            // detailsHours.textContent = this.dataPerHSale.indexOf(this.dataPerHSale[i]  hourList.appendChild(detailsHours)
+
+
+            
+
+
+        }
+
+        let totalSaleHtml = document.createElement('ul');
+        hourList.appendChild(totalSaleHtml);
+        // console.log(Seatle.totalSaleHours());
+        // console.log(this.totalSaleHours())
+        totalSaleHtml.innerHTML ='Total '+ (this.totalSaleHours());
+
+
+        
+    
+    },
+
+
+    // display to Html
 
 
 
@@ -132,15 +113,122 @@ Use a method of that object to generate a random number of customers per hour. O
 
 }
 
+Seatle.simulatedCookie();
+console.log(Seatle.dataPerHSale)
+console.log(Seatle.totalSaleHours())
+Seatle.displayToHtml();
+
+Seatle = {
+
+    // Store the min/max hourly customers, and the average cookies per customer, in object properties.
+    location: 'Seatle',
+    MinCus : 23,
+    MaxCus : 65,
+    avgSale : 6.3,
+    dataPerHSale: [],
+
+    // Use a method of that object to generate a random number of customers per hour. Objects/Math/random
+
+    randomCus : function () {
+        return Math.floor(Math.random()*(this.MaxCus-this.MinCus)+this.MinCus);
+    },
+
+    // Calculate and store the simulated amounts of cookies purchased for each hour at each location using average cookies purchased and the random number of customers generated.
+
+    simulatedCookie : function()
+    {
+        // from 6 am to 19 pm
+        for (let i = 6; i<=19; i++) 
+        {
+            cookiesHoursly = this.randomCus() * this.avgSale
+
+            cookiesHoursly=Math.ceil(cookiesHoursly)
+            this.dataPerHSale.push(cookiesHoursly)
+        } 
+
+    },
+
+    // Store the results for each location in a separate array… perhaps as a property of the object representing that location.
+
+    // Display the values of each array as unordered lists in the browser.
+
+    totalSaleHours: function () {
+        let total = 0;
+        
+    
+        for (let j = 0; j < this.dataPerHSale.length; j++) {
+            
+            
+            
+            // console.log(total)
+            
+            total += this.dataPerHSale[j];
+            
+
+        };
+
+        return total;
+    },
+    
+
+
+
+
+    displayToHtml : function() {
+        let locationBy =document.createElement('h2');
+        document.body.appendChild(locationBy);
+        locationBy.textContent = this.location;
+
+    
+        let hourList = document.createElement('ul');
+        document.body.appendChild(hourList);
+        
+
+        for (let i = 6; i<=19;i++) {
+            let detailsHours = document.createElement('ul');
+            // detailsHours.textContent = i+' ' + this.dataPerHSale[i-6];
+            let hours = i
+            let amForhours = 'am';
+
+            // convert am to pm
+            
+            if (i > 12) {
+                hours  -=12;
+                amForhours  = 'pm';
+            }
+            detailsHours.textContent = hours + ': ' + amForhours + ': ' + this.dataPerHSale[i-6];
+            hourList.appendChild(detailsHours);
+
+
+
+        
+
+
+            // detailsHours.textContent = this.dataPerHSale.indexOf(this.dataPerHSale[i]  hourList.appendChild(detailsHours)
+
+
+            
+
+
+        }
+
+        let totalSaleHtml = document.createElement('ul');
+        hourList.appendChild(totalSaleHtml);
+        // console.log(Seatle.totalSaleHours());
+        // console.log(this.totalSaleHours())
+        totalSaleHtml.innerHTML ='Total '+ (this.totalSaleHours());
+
+
+        
+    
+    },
+
+
+    // display to Html
 
 
 
 
 
 
-
-
-
-
-
-
+}
