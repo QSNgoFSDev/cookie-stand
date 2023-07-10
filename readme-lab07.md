@@ -8,9 +8,9 @@ Pat’s Salmon Cookies problem domain can be found here!
 
 - [x] Replace all of your object literals for the salmon cookie stand with a single constructor function that, when called with the ‘new’ keyword, it creates a new instance.
 
-- [ ] Replace the lists of your data for each store and build a single table of data instead. It should look similar to the following:
+- [x] Replace the lists of your data for each store and build a single table of data instead. It should look similar to the following:
 
-- [ ] Display each stores data in a table format similar to what is below. Break each column by the hour and complete each row with a “Daily Location Total”.
+- [x] Display each stores data in a table format similar to what is below. Break each column by the hour and complete each row with a “Daily Location Total”.
 
  	6:00am	7:00am	8:00am	9:00am	10:00am	11:00am	12:00pm	1:00pm	2:00pm	3:00pm	4:00pm	5:00pm	6:00pm	7:00pm	Daily Location Total
 Seattle	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 
@@ -19,15 +19,17 @@ Dubai
 Paris	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 
 Lima	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 
 Totals	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 
-- [ ] Each cookie stand location should have a separate render() method that creates and appends its row to the table
+- [x] Each cookie stand location should have a separate render() method that creates and appends its row to the table
 
-- [ ] The header row and footer row are each created in their own stand-alone function
+- [x] The header row and footer row are each created in their own stand-alone function
 
 - [ ] NOTE: Please use a header cell for both the header row ( containing store hours ), and the footer row ( hourly and grand totals across all stores ).
 
 Stretch Goals
-- [ ] Continue to work on design aspects of the public-facing page.
-- [ ] Run a Lighthouse Accessibility report looking for a score between 65-80. Make necessary improvements - [ ] Add a screenshot of your score to your README.md.
+- [x] Continue to work on design aspects of the public-facing page.
+- [x] Run a Lighthouse Accessibility report looking for a score between 65-80. Make necessary improvements - [100] Add a screenshot of your score to your README.md.
+![Alt text](image-1.png)
+
 - [ ] Make a style guide, using either Starbucks React Components Pattern Library or Starbucks - High level Guide as a model.
 - [ ] Create a second table that will help Pat manage staffing. Using the basic rubric that single Salmon Cookie Tosser can serve 20 customers per hour, and that each location should have a minimum of two Salmon Cookie Tossers on shift at all times, calculate how many Salmon Cookie Tossers are needed at each location each hour.
 
@@ -37,9 +39,9 @@ Stretch Goals
 ## Developer Style Guide
 - [ ] In addition to the requirements listed above, please ensure that your project also contains the following according to our style guide:
 
-- [ ] Good use of a constructor function; style and syntax are correctly implemented
+- [x] Good use of a constructor function; style and syntax are correctly implemented
 Duplicate code has been removed and DRY principles are evident
-- [ ] Working on a non-main branch for the day, with regular commit history. Basically, every time you get something to work, you should do a commit. But you only need to push every couple of hours or so, tops.
+- [x] Working on a non-main branch for the day, with regular commit history. Basically, every time you get something to work, you should do a commit. But you only need to push every couple of hours or so, tops.
 
 
 
