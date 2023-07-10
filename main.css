@@ -18,6 +18,8 @@ body {
     /* A background color for the default page background (make sure font colors have good contrast and are readable on this background). */
 
     background-color: beige;
+    height: 300vh;
+
 
     
 
@@ -25,6 +27,19 @@ body {
 
 
 }
+
+/* .salmonIntro {
+    margin-top: 200px;
+
+} */
+
+
+
+header {
+    position: sticky;
+    width: 100%;
+}
+
 
 article {
     display: flex;
@@ -63,6 +78,11 @@ ul {
     border: 2px solid black;
 }
 
+footer {
+    position: fixed;
+    width: 100%;
+    
+}
 
 
 
