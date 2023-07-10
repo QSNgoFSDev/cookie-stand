@@ -8,6 +8,23 @@ ul {
     list-style-type: none;
 
 }
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+    /* Specified different font colors for all three font uses. */
+
+    /* A background color for the default page background (make sure font colors have good contrast and are readable on this background). */
+
+    background-color: beige;
+    height: 300vh;
+
+
+    
+
+
+
+
+}
 
 li #home, li #sale {
     display: inline-block;
@@ -21,4 +38,20 @@ ul .navBar {
     border-radius: 1rem;
     border: 2px solid black ;
 
+}
+
+ul {
+
+    display: flex;
+    justify-content: space-around;
+        /* /* box-sizing: border-box; */
+    border-radius: 1rem;
+    border: 2px solid black;
+}
+
+
+footer {
+    position: fixed;
+    width: 100%;
+    
 }
