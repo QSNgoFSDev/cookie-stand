@@ -75,3 +75,5 @@ function Location(location, minCus, maxCus, avgSale) {
 
 
 }
+
+
