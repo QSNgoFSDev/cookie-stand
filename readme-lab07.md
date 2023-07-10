@@ -4,9 +4,9 @@ Pat’s Salmon Cookies problem domain can be found here!
 
 ## Instructions
 
-- [ ] Create a new branch for today’s lab. Make sure it has all of your changes from lab 06 so that you can extend the functionality.
+- [x] Create a new branch for today’s lab. Make sure it has all of your changes from lab 06 so that you can extend the functionality.
 
-- [ ] Replace all of your object literals for the salmon cookie stand with a single constructor function that, when called with the ‘new’ keyword, it creates a new instance.
+- [x] Replace all of your object literals for the salmon cookie stand with a single constructor function that, when called with the ‘new’ keyword, it creates a new instance.
 
 - [ ] Replace the lists of your data for each store and build a single table of data instead. It should look similar to the following:
 
