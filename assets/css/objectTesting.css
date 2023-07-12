@@ -1,0 +1,66 @@
+h1,h2,h3,h4,h5,h6 {
+  font-family: sans-serif;
+  text-align: center;
+
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+  /* Specified different font colors for all three font uses. */
+
+  /* A background color for the default page background (make sure font colors have good contrast and are readable on this background). */
+
+  background-color: beige;
+  height: 300vh;
+
+
+  
+
+
+
+
+}
+
+ul {
+  list-style-type: none;
+  justify-items: space-between;
+  
+ display: flex;
+ justify-content: space-around;
+     /* /* box-sizing: border-box; */
+ border-radius: 1rem;
+ border: 2px solid black; 
+  
+}
+
+
+
+
+li {
+  display: inline-block;
+  
+}
+
+
+table {
+  border: 1px solid black;
+
+}
+
+
+
+tr {
+  border: 1px solid black;
+}
+
+td {
+  border: 1px solid black;
+  
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  
+}
