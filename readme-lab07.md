@@ -23,7 +23,7 @@ Totals
 
 - [x] The header row and footer row are each created in their own stand-alone function
 
-- [ ] NOTE: Please use a header cell for both the header row ( containing store hours ), and the footer row ( hourly and grand totals across all stores ).
+- [x] NOTE: Please use a header cell for both the header row ( containing store hours ), and the footer row ( hourly and grand totals across all stores ).
 
 Stretch Goals
 - [x] Continue to work on design aspects of the public-facing page.
