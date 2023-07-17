@@ -43,6 +43,13 @@ li {
 
 table, tr, td {
   border: 1px solid black;
+  border-radius: 8px;
+  border-color: brown;
+  margin: 4px;
+  padding: 5px;
+  text-align: center;
+
+
 
 }
 
